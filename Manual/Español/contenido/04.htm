@@ -1,0 +1,413 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>ParticleFX Manual - Como usar las acciones de ParticleFX</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+body {
+	background-color: #222222;
+	margin-top: 0px;
+}
+body,td,th {
+	color: #333333;
+	font-family: Arial, Helvetica, sans-serif;
+}
+a:link {
+	color: #33B7FF;
+}
+a:hover {
+	color: #66CCFF;
+}
+a:active {
+	color: #66CCFF;
+}
+.style2 {
+	color: #33B7FF;
+	font-size: 24px;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style4 {font-size: 14px}
+.style6 {color: #CCCCCC}
+.style7 {color: #FFFFFF}
+.style8 {color: #333333}
+.style9 {color: #111111}
+a:visited {
+	color: #33B7FF;
+}
+.style13 {font-size: 14px; color: #FFFFFF; }
+.style15 {
+	color: #990000;
+	font-style: italic;
+}
+-->
+</style>
+</head>
+
+<body>
+<table width="960" height="720" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="200" height="18" bgcolor="111111"><span class="style7"><span class="style9"><br>
+    -</span> &Iacute;ndice de contenido </span></td>
+    <td width="750"><div align="center"><strong>ParticleFX - Manual</strong></div></td>
+    <td width="10">&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="828" valign="top" bgcolor="#333333"><p class="style4"><span class="style6"><span class="style7"><strong>- <a href="../Manual.htm">Introducci&oacute;n</a></strong><br>
+            <strong>- <a href="01.htm">Que hay de nuevo</a></strong><br>
+            <strong>- <a href="02.htm">Como instalar</a><br>
+- <a href="03.htm">Como activar</a></strong><br>
+<br>
+<span class="style8">-</span><span class="style8"></span>Categor&iacute;as &amp; Acciones <br>
+- <a href="04.htm">Como usar ParticleFX</a> </span></span></p>    </td>
+    <td valign="top"><blockquote>
+      <p><span class="style2">START - STOP PARTICLEFX</span><span class="style4"><br>
+    La categor&iacute;a &quot;Start - Stop pFX &quot; probablemente sea la categor&iacute;a de acciones mas importante en la librer&iacute;a ParticleFX, ya que en ellas se encuentran las acciones para activar los efectos especiales y que empiecen a funcionar y de misma manera elimiar o destruir los sistemas de particulas para liberar espacio en la memoria y que no baje la velocidad de FPS (Frame per second o Cuadro por segundos) <br>
+      </span></p>
+      <p class="style4"><strong><img src="img/img_008.jpg" width="24" height="24"> Start ParticleFX </strong><br>
+          <strong><em>Descripci&oacute;n:</em></strong><br>
+ Start ParicleFX es la acci&oacute;n que te permite iniciar el sistema de particulas para que los efectos puedan ser generados en tu juego. Sin est&aacute; acci&oacute;n colocada antes de alg&uacute;n efecto, ParticleFX no funcionar&iacute;a y GameMaker te dar&iacute;a un error. Est&aacute; acci&oacute;n es esencial. Regularmente est&aacute; accion deber&iacute;a ser agregada una sola vez dentro del evento "Create" de cada objeto que utilice alg&uacute;n efecto de ParticleFX. Pero hay una excepci&oacute;n, si el mismo objeto est&aacute; utilizando dos o mas acciones del mismo efecto pero con configuaraciones diferentes, en este caso debes colocar la acci&oacute;n "Start ParticleFX" antes del nuevo efecto que contiene una diferente configuraci&oacute;n, o de lo contrario todos lo efectos del mismo, tendr&aacute;n la misma configuraci&oacute;n. <br>
+        <strong><em><br>
+        Por ejemplo:</em></strong><br>
+ Si tienes dos o mas efectos de fuego dentro del mismo objeto pero cada uno tiene una configuraci&oacute;n diferente, entonces debes colocar la acci&oacute;n "Satrt ParticleFX" antes de cada uno de los efecto de fuego que quieras cambiar su configuraci&oacute;n. <br>
+ <br>
+Pero aunque es posible colocar dos o mas del mismo efecto en un solo objeto, es recomendado que solo coloques uno del mismo efecto en un solo objeto. Y si necesitas una configuraci&oacute;n diferente del mismo efecto, entonces lo hagas desde otro objeto. Esto no significa que solo puedes poner un efecto por objeto, de hecho puedes colocar todos los efectos de ParticleFX dentro del mismo objeto tan solo agregando una sola vez la acci&oacute;n "Start ParticleFX" dentro del evento "Create". As&iacute; que no te limites. <br>
+<br>
+<br>
+<strong><img src="img/img_031.jpg" width="24" height="24"> Destroy Particles</strong><br>
+<strong><em>Descripci&oacute;n:</em></strong><br>
+Destroy Paricles es la acci&oacute;n que te permite eliminar el, o los sistemas de particulas y de esta forma para el efecto por completo. Esta acci&oacute;n es MUY RECOMENDADA usar dentro del evento &quot;Destroy&quot; de cada objeto que est&eacute; usando ParticleFX o cada vez que pares de usar los efecto o al cambiar de Room. Ya que si no usas esta acci&oacute;n, eventualmente se acomula espacio innecesario en la memoria causando que el juego se congele.<br>
+<strong><em><br>
+Funciones:</em></strong><br>
+- <em>Particle:</em> Aqu&iacute; puedes elegir que sistema de particulas quieres desactivar en especifico o puedes seleccionar &quot;All&quot; para eliminar todas las particulas que est&eacute;n siendo ejecutadas por ese mismo objeto.<br>
+<br>
+<br>
+<br>
+<br>
+<span class="style2">ELEMENTS</span><br>
+La categor&iacute;a &quot;Elements&quot; incluye los efectos elementarios, como fuego y humo. (Pr&oacute;ximamente agregaremos otros efectos en futuras actualizaciones)  <br>
+<br>
+<strong>NOTA:
+</strong><br>
+<em>Cada acci&oacute;n viene pre-configurada y lista para usar, tu solo debes cambiar las propiedades a tu gusto. De nada! ;)</em> <br>
+      </p>
+      <p class="style4"><strong><img src="img/img_009.jpg" width="24" height="24"> Directional Fire Effect</strong> <br>
+          <strong><em>Descripci&oacute;n:</em></strong><br>
+          Directional Fire Effect es una acci&oacute;n que te permite crear efectos de fuego en manera direccional, es decir que puedes crear fuego y colocar en que direcci&oacute;n quieres que el fuego se dirija. <br>
+          <em>(Es recomendado utilizar este efecto dentro del evento &quot;Step&quot; o un evento continuo para un mejor resultado)</em><br>
+          <em><strong><br>
+          Funciones:</strong></em><br>
+          Las funciones de esta acci&oacute;n incluye 6 configuraciones las cuales las cuales te permiten personalizar el efecto en la manera que deseas para tu juego.<br>
+          <br>
+          - <em>Direction:</em> Esto sirve para
+elegir a que direcci&oacute;n en grados quieres que el fuego se dirija.<br>
+(Predeterminado en 90 grados | Arriba).<br>
+<br>
+- <em>X Position:</em> Sirve para elegir en que posici&oacute;n X en el nivel quieres colocar el efecto.<br>
+(Predeterminado en la posici&oacute;n x del objeto).<br>
+<br>
+- <em>Y Position:</em> Sirve para elegir en que posici&oacute;n Y en el nivel quieres colocar el efecto.<br>
+(Predeterminado en la posici&oacute;n y del objeto). <br>
+<br>
+- <em>Width</em><strong>:</strong> Sirve para dar tama&ntilde;o en lo ancho.<br>
+<br>
+- <em>High:</em> Sirve para dar tama&ntilde;o en lo alto. <br>
+<br>
+- <em>Depth:</em> Sirve para elegir la profundidad del objeto en el nivel.<br>
+(Predeterminado en | -100000 por encima de todos los objetos).<br>
+<br>
+<br>
+<strong><img src="img/img_010.jpg" width="24" height="24"> Smoke Effect </strong> <br>
+          <strong><em>Descripci&oacute;n:</em></strong><br>
+          Smoke Effect es una acci&oacute;n que te permite crear efectos de humo en manera direccional, es decir que puedes crear humo y colocar en que direcci&oacute;n quieres que el humo se dirija, de manera parecida al efecto de crear fuego.<br>
+          <br>
+          <em><strong>Funciones:</strong></em><br>
+          Las funciones de esta acci&oacute;n incluye 6 configuraciones las cuales las cuales te permiten personalizar el efecto en la manera que deseas para tu juego.<br>
+          <br>
+          - <em>Direction:</em> Esto sirve para elegir a que direcci&oacute;n en grados quieres que el humo se dirija.<br>
+          (Predeterminado en 90 grados | Arriba).<br>
+          <br>
+          - <em>X Position:</em> Sirve para elegir en que posici&oacute;n X en el nivel quieres colocar el efecto.<br>
+          (Predeterminado en la posici&oacute;n x del objeto).<br>
+          <br>
+          - <em>Y Position:</em> Sirve para elegir en que posici&oacute;n Y en el nivel quieres colocar el efecto.<br>
+          (Predeterminado en la posici&oacute;n y del objeto). <br>
+          <br>
+          - <em>Size:</em> Sirve para dar tama&ntilde;o en la escala del efecto. Puedes utilizar n&uacute;meros decimales para un mejor resultado y mas 
+
+
+ precisi&oacute;n.<br>
+          (Predeterminado en 0.10) <br>
+          <br>
+          - <em>Speed Force:</em> Sirve para elegir la fuerza de velocidad en la que el humo se mover&aacute;. Puedes utilizar numeros decimales para un mejor resultado y mas presici&oacute;n.<br>
+          <br>
+          - <em>Depth:</em> Sirve para elegir la profundidad del objeto en el nivel.<br>
+          (Predeterminado en -100000 por encima de todos los objetos).<br>
+          <br>
+          <br>
+          <strong><img src="img/img_011.jpg" width="24" height="24"> </strong><strong>Dark Smoke Effect </strong> <br>
+          <strong><em>Descripci&oacute;n:</em></strong><br>
+          Dark Smoke Effect es una acci&oacute;n que te permite crear efectos de humo oscuro en manera direccional, es decir que puedes crear humo oscuro y colocar en que direcci&oacute;n quieres que el humo se dirija.<br>
+          <br>
+          <em><strong>Funciones:</strong></em><br>
+          Las funciones de esta acci&oacute;n incluye 6 configuraciones las cuales las cuales te permiten personalizar el efecto en la manera que deseas para tu juego.<br>
+          <br>
+- <em>Direction:</em> Esto sirve para elegir a que direcci&oacute;n en grados quieres que el humo se dirija.<br>
+(Predeterminado en 90 grados | Arriba).<br>
+<br>
+- <em>X Position:</em> Sirve para elegir en que posici&oacute;n X en el nivel quieres colocar el efecto.<br>
+(Predeterminado en la posici&oacute;n x del objeto).<br>
+<br>
+- <em>Y Position:</em> Sirve para elegir en que posici&oacute;n Y en el nivel quieres colocar el efecto.<br>
+(Predeterminado en la posici&oacute;n y del objeto). <br>
+<br>
+- <em>Size:</em> Sirve para dar tama&ntilde;o en la escala del efecto. Puedes utilizar n&uacute;meros decimales para un mejor resultado y mas 
+
+
+ precisi&oacute;n.<br>
+(Predeterminado en 0.10) <br>
+<br>
+- <em>Speed Force:</em> Sirve para elegir la fuerza de velocidad en la que el humo se mover&aacute;. Puedes utilizar n&uacute;meros decimales para un mejor resultado y mas precisi&oacute;n.<br>
+<br>
+- <em>Depth:</em> Sirve para elegir la profundidad del objeto en el nivel.<br>
+(Predeterminado en -100000 por encima de todos los objetos).<br>
+<br>
+<br>
+<br>
+<br>
+<span class="style2">ACTION EFFECTS </span><br>
+La categor&iacute;a &quot;Action Effects &quot; incluye los efectos de acciones, como explosi&oacute;n y sangre. (Pr&oacute;ximamente  agregaremos otros efectos en futuras actualizaciones) <br>
+      </p>
+      <p class="style4"><strong><img src="img/img_012.jpg" width="24" height="24"> </strong><strong>Explosion Effect </strong> <br>
+        <strong><em>Descripci&oacute;n:</em></strong><br>
+Explosion Effect es una acci&oacute;n que te permite crear efectos de explosi&oacute;n.<br>
+<br>
+<em><strong>Funciones:</strong></em><br>
+Las funciones de esta acci&oacute;n incluye 5 configuraciones las cuales las cuales te permiten personalizar el efecto en la manera que deseas para tu juego.<br>
+<br>
+- <em>X Position:</em> Sirve para elegir en que posici&oacute;n X en el nivel quieres colocar el efecto.<br>
+(Predeterminado en la posici&oacute;n x del objeto).<br>
+<br>
+- <em>Y Position:</em> Sirve para elegir en que posici&oacute;n Y en el nivel quieres colocar el efecto.<br>
+(Predeterminado en la posici&oacute;n y del objeto). <br>
+<br>
+- <em>Size:</em> Sirve para dar tama&ntilde;o en la escala del efecto. <br>
+(Predeterminado en 40, pero puedes utilizar el numero 0 para el tama&ntilde;o mas peque&ntilde;o) <br>
+<br>
+- <em>Strength:</em> Sirve para elegir la fuerza del efecto: Normal, Medium o Maximun.<br>
+<br>
+- <em>Depth:</em> Sirve para elegir la profundidad del objeto en el nivel.<br>
+(Predeterminado en -100000 por encima de todos los objetos).<br>
+<br>
+<br>
+<strong><img src="img/img_013.jpg" width="24" height="24"> </strong><strong>Blood Sprinkled  Effect </strong> <br>
+        <strong><em>Descripci&oacute;n:</em></strong><br>
+        Blood Sprinklend Effect es una acci&oacute;n que te permite crear efectos de salpicadas de sangre. Excelente para juegos de disparos. <br>
+        <br>
+        <em><strong>Funciones:</strong></em><br>
+        Las funciones de esta acci&oacute;n incluye 6 configuraciones las cuales las cuales te permiten personalizar el efecto en la manera que deseas para tu juego.<br>
+        <br>
+- <em>X Position:</em> Sirve para elegir en que posici&oacute;n X en el nivel quieres colocar el efecto.<br>
+(Predeterminado en la posici&oacute;n x del objeto).<br>
+<br>
+- <em>Y Position:</em> Sirve para elegir en que posici&oacute;n Y en el nivel quieres colocar el efecto.<br>
+(Predeterminado en la posici&oacute;n y del objeto). <br>
+<br>
+- <em>Size:</em> Sirve para dar tama&ntilde;o en la escala del efecto. Puedes utilizar n&uacute;meros decimales para un mejor resultado y mas precisi&oacute;n.<br>
+<br>
+- <em>Speed Force:</em> Sirve para elegir la fuerza de velocidad en la que el effecto se mover&aacute; y alejar&aacute; de su punto de inicio. Puedes utilizar n&uacute;meros decimales para un mejor resultado y mas precisi&oacute;n.<br>
+<br>
+- <em>Depth:</em> Sirve para elegir la profundidad del objeto en el nivel.<br>
+(Predeterminado en -100000 por encima de todos los objetos)<br>
+<br>
+<br>
+<strong><strong><img src="img/img_014.jpg" width="24" height="24"></strong> Apply Gravity to Blood Sprinkled Effect </strong> <br>
+<strong><em>Descripci&oacute;n:</em></strong><br>
+Apply gravity to Blood Sprinklend Effect es una acci&oacute;n que te permite aplicar gravedad en cualquier direcci&oacute;n al efecto de salpicadas de sangre, para crear un efecto mas realista y din&aacute;mico. <br>
+<br>
+IMPORTANTE: <br>
+<em>Esta acci&oacute;n debe ser colocada unicamente debajo de la acci&oacute;n &quot;Blood Sprinklend Effect&quot; que quieres aplicar el efecto de gravedad y nunca antes, de lo contrario causar&iacute;a error.<br>
+</em><br>
+<em><strong>Funciones:</strong></em><br>
+Las funciones de esta acci&oacute;n incluye 2 configuraciones las cuales las cuales te permiten personalizar el efecto en la manera que deseas para tu juego.<br>
+<br>
+- <em>Gravity Force:</em> Sirve para elegir la fuerza y velocidad de gravedad con la que halar&aacute; el efecto. <br>
+<br>
+- <em>Direction:</em> Sirve para elegir en que direcci&oacute;n en grados quieres que la sangre se dirija.<br>
+(Predeterminado en 270 grados | Abajo).<br>
+<br>
+<span class="style2"><br>
+<br>
+OTHERS </span><br>
+ La categor&iacute;a "Others " incluye otros efectos, como el de personalizar tu propio efecto utilizando un sprite y efectos para otros tipos de juegos como burbujas y efecto m&aacute;gico. (Pr&oacute;ximamente agregaremos otros efectos en futuras actualizaciones) <br>
+<br>
+<br>
+<strong><strong><strong><img src="img/img_015.jpg" width="24" height="24"></strong></strong> Sprite As Custom Particle </strong><br>
+<strong><em>Descripci&oacute;n:</em></strong><br>
+ Sprite as custom Particle es una acci&oacute;n que te permite crear efectos de part&iacute;culas utilizando alg&uacute;n sprite dentro de tu juego. Con esto ya te puedes imaginar lo poderoso que puede llegar a ser esta acci&oacute;n en particular. Con esta acci&oacute;n puedes utilizar un sprite y convertirlo que quieras pr&aacute;cticamente. Puedes hacer fuego, agua, humo, sangre personalizada y mejorada con tan solo algunos ajustes y detalles en los sprites que utilices. <br>
+<br>
+<em><strong>Funciones:</strong></em><br>
+Las funciones de esta acci&oacute;n incluye 6 configuraciones las cuales las cuales te permiten personalizar el efecto en la manera que deseas para tu juego.<br>
+<br>
+- <em>Sprite:</em> Sirve para elegir el sprite que quieres utilizar. <br>
+<br>
+- <em>Animation:</em> Sirve para activar o desactivar la animaci&oacute;n del sprite si tiene sub-imagenes.<br>
+(Predeterminado en OFF | Apagada)
+<br>
+<br>
+- <em>X Position:</em> Sirve para elegir en que posici&oacute;n X en el nivel quieres colocar el efecto.<br>
+(Predeterminado en la posici&oacute;n x del objeto). <br>
+<em>NOTA: Esto es relativo a la posici&oacute;n de anclaje del sprite (Orgin) </em><br>
+<br>
+- <em>Y Position:</em> Sirve para elegir en que posici&oacute;n Y en el nivel quieres colocar el efecto.<br>
+(Predeterminado en la posici&oacute;n y del objeto). <br>
+<em>NOTA: Esto es relativo a la posici&oacute;n de anclaje del sprite (Orgin) </em><br>
+<br>
+- <em>Life Time:</em> Sirve para elegir que tanto tiempo en pasos va a durar el sprite antes de desaparecer.<br> 
+<em>NOTA: Esto va a depender a que velocidad tengas configurado tu nivel.</em><br>
+<strong>Por ejemplo: </strong><br>
+<em>Si tu nivel est&aacute; configurado a una velocidad de 30, entonces 30 pasos es igual a 1 segundo y 60 ser&iacute;an 2 segundos. </em><br>
+<br>
+- <em>Blend Mode:</em> Sirve para activar el modo de fusi&oacute;n del efecto. Se recomienda experimentar con esto para obtener mejores resultados.<br>
+(Predeterminado en OFF | Apagado)
+<br>
+<br>
+<br>
+<strong><strong><strong><strong><img src="img/img_016.jpg" width="24" height="24"></strong></strong></strong> Apply Gravity to Custom Particle</strong> <br>
+<strong><em>Descripci&oacute;n:</em></strong><br>
+Apply gravity to Custom Particle es una acci&oacute;n que te permite aplicar gravedad en cualquier direcci&oacute;n al efecto personalizado, para crear un efecto mas   din&aacute;mico. <br>
+<br>
+IMPORTANTE: <br>
+<em>Esta acci&oacute;n debe ser colocada unicamente debajo de la acci&oacute;n &quot;Sprite as custom Particle&quot; que quieres aplicar el efecto de gravedad y nunca antes, de lo contrario causar&iacute;a error.<br>
+</em><br>
+<em><strong>Funciones:</strong></em><br>
+Las funciones de esta acci&oacute;n incluye 2 configuraciones las cuales las cuales te permiten personalizar el efecto en la manera que deseas para tu juego.<br>
+<br>
+- <em>Gravity Force:</em> Sirve para elegir la fuerza y velocidad de gravedad con la que halar&aacute; el efecto. <br>
+<br>
+- <em>Direction:</em> Sirve para elegir en que direcci&oacute;n en grados quieres que el sprite se dirija.<br>
+(Predeterminado en 270 grados | Abajo).<br>
+<br>
+<br>
+<strong><strong><strong><strong><strong><img src="img/img_017.jpg" width="24" height="24"></strong></strong></strong></strong> Configurate  Custom Particle</strong> <br>
+<strong><em>Descripci&oacute;n:</em></strong><br>
+Configurate Custom Particle es una acci&oacute;n que te permite configurar algunas funciones extras para crear un efecto mas   din&aacute;mico y personalizado. <br>
+<br>
+IMPORTANTE: <br>
+<em>Esta acci&oacute;n debe ser colocada unicamente debajo de la acci&oacute;n &quot;Sprite as custom Particle&quot; que quieres aplicar las configuraciones y nunca antes, de lo contrario causar&iacute;a error.<br>
+</em><br>
+<em><strong>Funciones:</strong></em><br>
+Las funciones de esta acci&oacute;n incluye 4 configuraciones las cuales las cuales te permiten personalizar el efecto en la manera que deseas para tu juego.<br>
+<br>
+- <em>Depth:</em> Sirve para elegir la profundidad del objeto en el nivel.<br>
+(Predeterminado en -1 por encima del objeto relativamente a su profundidad actual)<br>
+<br>
+- <em>De/Increase:</em> Esto sirve para aumentar o disminuir el tama&ntilde;o del sprite cada paso. Si pones n&uacute;meros negativo entonces disminuye y si pones n&uacute;meros positivos entonces aumenta en cada paso su tama&ntilde;o el efecto. Recomendado utilizar n&uacute;meros decimales para un mejor resultado y mas precisi&oacute;n.<br>
+<br>
+- <em>Size Wiggle:</em> Sirve para elegir que tanto puede variar el tama&ntilde;o; autom&aacute;ticamente reducir y aumentar cada paso. Excelente para personalizar al m&aacute;ximo el efecto. Puedes utilizar n&uacute;meros decimales para un mejor resultado y mas precisi&oacute;n.<br>
+<br>
+- <em>Angle:</em> Sirve para cambiar el &aacute;ngulo de direcci&oacute;n en la que el sprite de part&iacute;cula est&aacute; siendo dibujado en la pantalla y as&iacute; tener un total control y manipulaci&oacute;n del efecto. Puedes utilizar un valor de 0 a 360 grados completos; tambi&eacute;n puedes utilizar la variable &quot;<span class="style15">direction</span>&quot; para detectar autom&aacute;ticamente la direcci&oacute;n en la que se dirige el objeto que contenga est&aacute; acci&oacute;n de part&iacute;culas. <br>
+<br>
+<br>
+<strong><strong><strong><strong><strong><strong><img src="img/img_018.jpg" width="24" height="24"></strong></strong></strong></strong></strong> Magical Hit Effect </strong> <br>
+<strong><em>Descripci&oacute;n:</em></strong><br>
+Magical Hit Effect es una acci&oacute;n que te permite crear un efecto &quot;M&aacute;gico&quot; personalizado. Excelente para hacer juegos RPG, portales o poderes de ataque o magia. <em><br>
+</em><br>
+<em><strong>Funciones:</strong></em><br>
+Las funciones de esta acci&oacute;n incluye 6 configuraciones las cuales las cuales te permiten personalizar el efecto en la manera que deseas para tu juego.<br>
+<br>
+- <em>X Position:</em> Sirve para elegir en que posici&oacute;n X en el nivel quieres colocar el efecto.<br>
+(Predeterminado en la posici&oacute;n x del objeto).<br>
+<br>
+- <em>Y Position:</em> Sirve para elegir en que posici&oacute;n Y en el nivel quieres colocar el efecto.<br>
+(Predeterminado en la posici&oacute;n y del objeto).<br>
+<br>
+- <em>Color 1:</em> Sirve para elegir el primero color. Normalmente  un color claro.<br>
+<br>
+- <em>Color 1:</em> Sirve para elegir el segundo color. Normalmente un color mas oscuro.<br>
+<br>
+- <em>Scale:</em> Sirve para elegir la escala (tama&ntilde;o) del efecto. Puedes utilizar n&uacute;meros decimales para un mejor resultado y mas precisi&oacute;n.<br>
+<br>
+- <em>Duration:</em> Sirve para determinar que tanto tiempo en pasos va a durar el efecto en su desarrollo y luego terminar. <em><br>
+NOTA: Esto va a depender a que velocidad tengas configurado tu nivel.</em><br>
+<strong>Por ejemplo: </strong><br>
+<em>Si tu nivel est&aacute; configurado a una velocidad de 30, entonces 30 pasos es igual a 1 segundo y 60 ser&iacute;an 2 segundos. </em> <br>
+<br>
+<br>
+<strong><img src="img/img_019.jpg" width="24" height="24"> Configurate Magical Hit Effect </strong><br>
+<strong><em>Descripci&oacute;n:</em></strong><br>
+Configurate Magical Hit Effect es una acci&oacute;n que te permite configurar la opci&oacute;n de profundidad y el modo de fusi&oacute;n del efecto. <br>
+<br>
+IMPORTANTE: <br>
+<em>Esta acci&oacute;n debe ser colocada unicamente debajo de la acci&oacute;n &quot;Magical Hit Effect &quot; que quieres aplicar las configuraciones y nunca antes, de lo contrario causar&iacute;a error.<br>
+</em><br>
+<em><strong>Funciones:</strong></em><br>
+Las funciones de esta acci&oacute;n incluye 2 configuraciones las cuales las cuales te permiten personalizar el efecto en la manera que deseas para tu juego.<br>
+<br>
+- <em>Depth:</em> Sirve para elegir la profundidad del objeto en el nivel.<br>
+(Predeterminado en -1 por encima del objeto relativamente a su profundidad actual)<br>
+<br>
+- <em>Blend Mode:</em> Sirve para activar el modo de fusi&oacute;n del efecto. Se recomienda experimentar con esto para obtener mejores resultados.<br>
+(Predeterminado en OFF | Apagado) <br>
+<br>
+<br>
+<strong><strong><img src="img/img_020.jpg" width="24" height="24"></strong> Bubble Effect </strong> <br>
+<strong><em>Descripci&oacute;n:</em></strong><br>
+Bubble Effect es una acci&oacute;n que te permite crear un efecto de burbuja. Excelente para hacer juegos 
+
+
+ acu&aacute;ticos.<em> <br>
+<em>(Es recomendado utilizar este efecto dentro del evento &quot;Step&quot; o un evento continuo para un mejor resultado)</em><br>
+</em><br>
+<em><strong>Funciones:</strong></em><br>
+Las funciones de esta acci&oacute;n incluye 6 configuraciones las cuales las cuales te permiten personalizar el efecto en la manera que deseas para tu juego.<br>
+<br>
+- <em>X Position:</em> Sirve para elegir en que posici&oacute;n X en el nivel quieres colocar el efecto.<br>
+(Predeterminado en la posici&oacute;n x del objeto).<br>
+<br>
+- <em>Y Position:</em> Sirve para elegir en que posici&oacute;n Y en el nivel quieres colocar el efecto.<br>
+(Predeterminado en la posici&oacute;n y del objeto).<br>
+<br>
+- <em>Scale:</em> Sirve para elegir la escala (tama&ntilde;o) del efecto. Puedes utilizar n&uacute;meros decimales para un mejor resultado y mas precisi&oacute;n.<br>
+<br>
+- <em>Life Time:</em> Sirve para elegir que tanto tiempo en pasos va a durar la burbuja antes de desaparecer.<br>
+<em>NOTA: Esto va a depender a que velocidad tengas configurado tu nivel.</em><br>
+<strong>Por ejemplo: </strong><br>
+<em>Si tu nivel est&aacute; configurado a una velocidad de 30, entonces 30 pasos es igual a 1 segundo y 60 ser&iacute;an 2 segundos.</em> <br>
+<br>
+- <em>Gravity Force:</em> Sirve para elegir la fuerza y velocidad de gravedad con la que halar&aacute; el efecto. <br>
+<br>
+- <em>Direction:</em> Sirve para elegir en que direcci&oacute;n en grados quieres que las burbujas se dirijan.<br>
+(Predeterminado en 270 grados | Abajo).<br>
+<br>
+<br>
+<strong><strong><strong><img src="img/img_021.jpg" width="24" height="24"></strong></strong> Configurate Bubble Effect </strong><br>
+<strong><em>Descripci&oacute;n:</em></strong><br>
+Configurate Bubble Effect es una acci&oacute;n que te permite configurar la opci&oacute;n de profundidad y el modo de fusi&oacute;n del efecto de burbujas. <br>
+<br>
+IMPORTANTE: <br>
+<em>Esta acci&oacute;n debe ser colocada unicamente debajo de la acci&oacute;n &quot;Bubble Effect &quot; que quieres aplicar las configuraciones y nunca antes, de lo contrario causar&iacute;a error.<br>
+</em><br>
+<em><strong>Funciones:</strong></em><br>
+Las funciones de esta acci&oacute;n incluye 2 configuraciones las cuales las cuales te permiten personalizar el efecto en la manera que deseas para tu juego.<br>
+<br>
+- <em>Blend Mode:</em> Sirve para activar el modo de fusi&oacute;n del efecto. Se recomienda experimentar con esto para obtener mejores resultados.<br>
+(Predeterminado en OFF | Apagado) <br>
+<br>
+- <em>Depth:</em> Sirve para elegir la profundidad del objeto en el nivel.<br>
+(Predeterminado en -1 por encima del objeto relativamente a su profundidad actual)</p>
+      </blockquote>      
+    <p class="style4"><br>
+</p></td>
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#111111">&nbsp;</td>
+    <td bgcolor="#111111"><div align="center"><span class="style13">Copyright &copy; 2017 by 2DD ENTERTAINMENT. All Rights Reserved.</span></div></td>
+    <td bgcolor="#111111">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

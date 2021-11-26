@@ -1,0 +1,29 @@
+NOTA:
+Antes de usar la versión 1.1.2 de ParticleFX, recuerda des-instalar la versión anterior.
+
+
+Que hay de nuevo:
+En la versión 1.1.2 hemos agregado una nueva acción llamada "Destroy Particle" 
+la cual te permite destruir unn efecto en especifico o todos al mismo tiempo. 
+
+Es recomendado agregar esta acción dentro del evento "Destroy" o el evento "Room End"
+de cualquier objeto que esté generando particula. De esta forma puede liberar
+espacio en la memoria y evitar que el juego baje la velicidad de los FPS.
+
+
+Errores arreglados:
+-El juego se ponía lento después de unos minutos. [Arreglado si usas esta nueva acción]
+
+
+
+IMPORTANTE:
+Antes de utilizar cualquier efectos primero debes colocar la acción 
+"Start ParticleFX" dentro del evento "Create" de tu objeto.
+
+ **Por favor leer el Manual antes de usar esta versión.**
+
+___________________________________________________________________________
+Sí necesitas ayuda o tienes preguntas con respecto al uso de la extensión
+puedes escribirnos en facebook.com/2ddentertainment o si estás teniendo 
+algún error con ParticleFX escríbenos desde el área de soporte técnico en 
+nuestra pagina: www.2ddentertainment.com o http://2ddentertainment.com/soporte.htm
